@@ -32,7 +32,7 @@ header::before{
 
     --brand-beige: #F5E7D3;
 
-    --nav-height: 7.2rem;
+    --nav-height: 6.2rem;
 }
 
 html, body{
@@ -45,6 +45,7 @@ body {
     font-size: 1.6rem;
 
     text-align: center;
+    overflow: overlay;
 }
 
 ul {
@@ -53,10 +54,10 @@ ul {
 }
 
 .wrapper {
-    width: 37.5rem;
+    width: 40.5rem;
     margin-inline: auto;
 
-    padding-inline: 2.4rem;
+    padding-inline: 2.0rem;
 }
 
 /* ======== HEADER ======== */
@@ -137,7 +138,7 @@ nav {
     
     position: fixed;
     top: 0;
-    left: 50%;
+    left: 45%;
     transform: translateX(-50%);
 }
 
@@ -152,11 +153,23 @@ nav .wrapper{
     justify-content: space-between;
 }
 
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+}
+
 
 /* ======== MENU-EXPANDED  ================= */
 body.menu-expanded{
     overflow: hidden;
 }
+
+body.menu-expanded > :not(nav) {
+    display: none;
+}
+
 
 .menu,
 .close-menu,
@@ -176,21 +189,64 @@ body.menu-expanded .menu{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--secondary-color);
+    background: var(--secondary-color);
 
-    width: 100vw;
+    width: 110vw;
     height: 100vh;
+
+    padding-top: var(--nav-height);
 }
 
-body.menu-expanded .nav{
+body.menu-expanded nav{
     position: relative;
 }
 
-.menu .button
+.menu ul:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.9rem;
+
+    margin-top: 6rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button{
+    background: var(--tertiary-color);
+    border-radius: 3.0rem;
+    font-weight: 4.0rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 16px 32px;
+    
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
 
 .social-links{
     display: flex;
     gap: 3.2rem;
     align-items: center;
     justify-content: center;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded nav button
+{
+    position: relative;
+    z-index: 100;
+  
 }
