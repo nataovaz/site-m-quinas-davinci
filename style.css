@@ -53,6 +53,14 @@ ul {
     
 }
 
+a{
+    width: 4.0rem;
+}
+
+a.button{
+    width: 30rem;
+}
+
 .wrapper {
     width: 40.5rem;
     margin-inline: auto;
@@ -144,7 +152,7 @@ nav {
 
 nav.scroll {
     background: var(--secondary-color);
-    width: 100ww;
+    width: 110vw;
 }
 
 nav .wrapper{
@@ -191,7 +199,7 @@ body.menu-expanded .menu{
     left: 0;
     background: var(--secondary-color);
 
-    width: 110vw;
+    width: 100vw;
     height: 100vh;
 
     padding-top: var(--nav-height);
@@ -247,6 +255,11 @@ body.menu-expanded .logo,
 body.menu-expanded nav button
 {
     position: relative;
-    z-index: 100;
+    z-index: 10;
   
+}
+
+
+body.menu-expanded button path{
+    fill: var(--tertiary-color);
 }
